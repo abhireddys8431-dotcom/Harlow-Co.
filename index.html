@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harlow & Co. | Luxury Real Estate</title>
+  <meta name="description" content="Harlow & Co. presents an exclusive portfolio of the world's most prestigious luxury estates, modern villas, and sky penthouses.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="header-nav" id="mainNav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" id="navLogo">HARLOW<span>&</span>CO.</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" style="color: var(--color-gold);">Home</a></li>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="property-detail.html">Featured Property</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="property-detail.html#contact" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">Inquire</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="images/hero_villa.png" alt="Luxury Villa Exterior" id="heroImage">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-tagline">Exquisite Living Defined</span>
+        <h1 class="hero-title">Where architectural <span>artistry</span> meets home.</h1>
+        <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 2.5rem; max-width: 600px;">
+          A curated portfolio of ultra-luxury estates, meticulously selected for the discerning few.
+        </p>
+        <a href="listings.html" class="btn btn-gold">Explore Estates</a>
+      </div>
+    </div>
+
+    <!-- Floating Glassmorphic Search Bar -->
+    <div class="search-container">
+      <form action="listings.html" method="GET" class="glass-search" id="homeSearchForm">
+        <div class="search-field">
+          <label for="location">Location</label>
+          <select name="location" id="location">
+            <option value="">Any Location</option>
+            <option value="aspen">Aspen, CO</option>
+            <option value="hamptons">The Hamptons, NY</option>
+            <option value="beverly-hills">Beverly Hills, CA</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label for="type">Property Type</label>
+          <select name="type" id="type">
+            <option value="">Any Type</option>
+            <option value="villa">Modern Villa</option>
+            <option value="estate">Historic Estate</option>
+            <option value="penthouse">Sky Penthouse</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label for="price">Price Range</label>
+          <select name="price" id="price">
+            <option value="">Any Price</option>
+            <option value="5-10">$5M – $10M</option>
+            <option value="10-15">$10M – $15M</option>
+            <option value="15+">$15M+</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label for="beds">Bedrooms</label>
+          <select name="beds" id="beds">
+            <option value="">Any Beds</option>
+            <option value="3">3+ Bedrooms</option>
+            <option value="4">4+ Bedrooms</option>
+            <option value="5">5+ Bedrooms</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary search-btn" id="searchSubmitBtn">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- About / Teaser Section -->
+  <section class="section" style="padding-top: 12rem;">
+    <div class="container">
+      <div class="about-teaser">
+        <div class="about-graphics">
+          <img src="images/estate_2.png" alt="Harlow Real Estate Exterior" class="about-img-large" id="aboutImgLarge">
+          <img src="images/pool_side.png" alt="Luxury Pool View" class="about-img-small" id="aboutImgSmall">
+        </div>
+        <div class="about-content-text">
+          <span class="section-subtitle">Our Heritage</span>
+          <h2 id="aboutTitle">A legacy of trust, discretion, and architectural prestige.</h2>
+          <p>
+            For over three decades, Harlow & Co. has set the standard for ultra-luxury residential brokerages. We represent architects of renown and clients who appreciate the finer details of mastercraftsmanship and premium design.
+          </p>
+          <div class="about-highlight">
+            "Home is not merely an address, but a sanctuary of curated moments and timeless elegance."
+          </div>
+          <p>
+            Whether acquiring a coastal manor in the Hamptons or a contemporary mountain lodge in Aspen, our bespoke advisory services offer unparalleled guidance every step of the way.
+          </p>
+          <a href="listings.html" class="btn btn-outline" id="aboutLearnBtn">Our Philosophy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Collection Grid Section -->
+  <section class="section section-bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Curated Portfolios</span>
+        <h2 class="section-title">Featured Residences</h2>
+        <p class="section-desc">Explore a selection of our most exclusive properties currently available for private acquisition.</p>
+      </div>
+
+      <div class="listings-grid">
+        <!-- Property 1 -->
+        <article class="property-card" id="featuredCard1">
+          <div class="card-img-wrapper">
+            <span class="card-badge">Featured</span>
+            <img src="images/hero_villa.png" alt="The Obsidian Villa">
+          </div>
+          <div class="card-content">
+            <div class="card-price">$8,500,000</div>
+            <h3 class="card-title"><a href="property-detail.html">The Obsidian Villa</a></h3>
+            <div class="card-location">
+              <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 0C3.13 0 0 3.13 0 7C0 12.25 7 18 7 18C7 18 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z" fill="#C5A880"/>
+              </svg>
+              Aspen, Colorado
+            </div>
+            <div class="card-details">
+              <span><strong>5</strong> Beds</span>
+              <span><strong>6.5</strong> Baths</span>
+              <span><strong>7,200</strong> Sq Ft</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Property 2 -->
+        <article class="property-card" id="featuredCard2">
+          <div class="card-img-wrapper">
+            <span class="card-badge">Just Listed</span>
+            <img src="images/estate_3.png" alt="Stonehaven Manor">
+          </div>
+          <div class="card-content">
+            <div class="card-price">$12,400,000</div>
+            <h3 class="card-title"><a href="listings.html">Stonehaven Manor</a></h3>
+            <div class="card-location">
+              <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 0C3.13 0 0 3.13 0 7C0 12.25 7 18 7 18C7 18 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z" fill="#C5A880"/>
+              </svg>
+              The Hamptons, New York
+            </div>
+            <div class="card-details">
+              <span><strong>7</strong> Beds</span>
+              <span><strong>8.5</strong> Baths</span>
+              <span><strong>10,500</strong> Sq Ft</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Property 3 -->
+        <article class="property-card" id="featuredCard3">
+          <div class="card-img-wrapper">
+            <span class="card-badge">Exclusive</span>
+            <img src="images/estate_4.png" alt="Aura Sky Penthouse">
+          </div>
+          <div class="card-content">
+            <div class="card-price">$15,900,000</div>
+            <h3 class="card-title"><a href="listings.html">Aura Sky Penthouse</a></h3>
+            <div class="card-location">
+              <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 0C3.13 0 0 3.13 0 7C0 12.25 7 18 7 18C7 18 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z" fill="#C5A880"/>
+              </svg>
+              Beverly Hills, California
+            </div>
+            <div class="card-details">
+              <span><strong>4</strong> Beds</span>
+              <span><strong>5</strong> Baths</span>
+              <span><strong>6,100</strong> Sq Ft</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin-top: 4.5rem;">
+        <a href="listings.html" class="btn btn-primary" id="viewAllListingsBtn">View All Listings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Testimonials</span>
+        <h2 class="section-title">Client Experiences</h2>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 2rem 0;">
+        <p style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; line-height: 1.6; color: var(--color-green-primary); margin-bottom: 2rem;" id="testimonialText">
+          "The advisory team at Harlow & Co. handled our estate acquisition with the absolute highest level of discretion, professionalism, and elegance. They did not just find us a house, they secured a piece of art."
+        </p>
+        <div style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem;" id="testimonialAuthor">
+          Lord & Lady Harrington
+        </div>
+        <div style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 0.2rem;">
+          Acquired Stonehaven Manor, Hamptons
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: #fff; display: inline-block; margin-bottom: 1.5rem;">HARLOW<span>&</span>CO.</a>
+          <p>Bespoke luxury real estate services for selective clientele. Timeless design, enduring quality, absolute discretion.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul class="footer-links">
+            <li><a href="listings.html">Aspen, CO</a></li>
+            <li><a href="listings.html">The Hamptons, NY</a></li>
+            <li><a href="listings.html">Beverly Hills, CA</a></li>
+            <li><a href="listings.html">Miami Beach, FL</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">The Advisory</a></li>
+            <li><a href="#">Press Room</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><span style="color: rgba(250,248,245,0.7);">HQ: Fifth Avenue, NY</span></li>
+            <li><a href="mailto:concierge@harlowco.com">concierge@harlowco.com</a></li>
+            <li><a href="tel:+18005550199">+1 (800) 555-0199</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Harlow & Co. Real Estate Advisory. All rights reserved.</div>
+        <div style="display: flex; gap: 2rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll effect script -->
+  <script>
+    const header = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>

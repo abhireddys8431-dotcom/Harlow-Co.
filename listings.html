@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Residences | Harlow & Co.</title>
+  <meta name="description" content="Browse our curated collection of luxury estates, penthouses, and private villas. Find your next masterpiece home.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Custom listing transitions for smooth JS filtering */
+    .property-card {
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .property-card.hide {
+      opacity: 0;
+      transform: scale(0.92) translateY(20px);
+      pointer-events: none;
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+    
+    /* Ensure the grid handles absolute-positioned hidden cards nicely */
+    .listings-grid {
+      position: relative;
+      transition: min-height 0.4s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="header-nav scrolled" id="mainNav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" id="navLogo">HARLOW<span>&</span>CO.</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="listings.html" style="color: var(--color-gold);">Listings</a></li>
+          <li><a href="property-detail.html">Featured Property</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="property-detail.html#contact" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">Inquire</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Listings Hero -->
+  <section class="listings-hero">
+    <div class="container">
+      <span class="hero-tagline" style="color: var(--color-gold);">Our Portfolio</span>
+      <h1>Exclusive Residences</h1>
+      <p>A selective showcase of masterfully designed architectural creations and heritage estates.</p>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="container filter-container">
+      <div class="filter-group" id="filterControls">
+        <select class="filter-select" id="filterLocation" aria-label="Filter by Location">
+          <option value="all">All Locations</option>
+          <option value="aspen">Aspen, CO</option>
+          <option value="hamptons">The Hamptons, NY</option>
+          <option value="beverly-hills">Beverly Hills, CA</option>
+        </select>
+        
+        <select class="filter-select" id="filterType" aria-label="Filter by Property Type">
+          <option value="all">All Types</option>
+          <option value="villa">Modern Villa</option>
+          <option value="estate">Historic Estate</option>
+          <option value="penthouse">Sky Penthouse</option>
+        </select>
+
+        <select class="filter-select" id="filterPrice" aria-label="Filter by Price Range">
+          <option value="all">All Price Ranges</option>
+          <option value="5-10">$5M – $10M</option>
+          <option value="10-15">$10M – $15M</option>
+          <option value="15+">$15M+</option>
+        </select>
+
+        <select class="filter-select" id="filterBeds" aria-label="Filter by Bedrooms">
+          <option value="all">Any Bedrooms</option>
+          <option value="4">4+ Beds</option>
+          <option value="5">5+ Beds</option>
+          <option value="7">7+ Beds</option>
+        </select>
+      </div>
+
+      <div class="results-count" id="resultsText">
+        Showing <strong>4</strong> estates
+      </div>
+    </div>
+  </div>
+
+  <!-- Listings Grid Section -->
+  <section class="section">
+    <div class="container">
+      <div class="listings-grid" id="listingsGrid">
+        
+        <!-- Card 1: Obsidian Villa -->
+        <article class="property-card" 
+                 data-location="aspen" 
+                 data-type="villa" 
+                 data-price="8.5" 
+                 data-beds="5" 
+                 id="cardObsidian">
+          <div class="card-img-wrapper">
+            <span class="card-badge">Featured</span>
+            <img src="images/hero_villa.png" alt="The Obsidian Villa">
+          </div>
+          <div class="card-content">
+            <div class="card-price">$8,500,000</div>
+            <h3 class="card-title"><a href="property-detail.html">The Obsidian Villa</a></h3>
+            <div class="card-location">
+              <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 0C3.13 0 0 3.13 0 7C0 12.25 7 18 7 18C7 18 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z" fill="#C5A880"/>
+              </svg>
+              Aspen, Colorado
+            </div>
+            <div class="card-details">
+              <span><strong>5</strong> Beds</span>
+              <span><strong>6.5</strong> Baths</span>
+              <span><strong>7,200</strong> Sq Ft</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Stonehaven Manor -->
+        <article class="property-card" 
+                 data-location="hamptons" 
+                 data-type="estate" 
+                 data-price="12.4" 
+                 data-beds="7" 
+                 id="cardStonehaven">
+          <div class="card-img-wrapper">
+            <span class="card-badge">Just Listed</span>
+            <img src="images/estate_3.png" alt="Stonehaven Manor">
+          </div>
+          <div class="card-content">
+            <div class="card-price">$12,400,000</div>
+            <h3 class="card-title"><a href="property-detail.html">Stonehaven Manor</a></h3>
+            <div class="card-location">
+              <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 0C3.13 0 0 3.13 0 7C0 12.25 7 18 7 18C7 18 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z" fill="#C5A880"/>
+              </svg>
+              The Hamptons, New York
+            </div>
+            <div class="card-details">
+              <span><strong>7</strong> Beds</span>
+              <span><strong>8.5</strong> Baths</span>
+              <span><strong>10,500</strong> Sq Ft</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Aura Sky Penthouse -->
+        <article class="property-card" 
+                 data-location="beverly-hills" 
+                 data-type="penthouse" 
+                 data-price="15.9" 
+                 data-beds="4" 
+                 id="cardAura">
+          <div class="card-img-wrapper">
+            <span class="card-badge">Exclusive</span>
+            <img src="images/estate_4.png" alt="Aura Sky Penthouse">
+          </div>
+          <div class="card-content">
+            <div class="card-price">$15,900,000</div>
+            <h3 class="card-title"><a href="property-detail.html">Aura Sky Penthouse</a></h3>
+            <div class="card-location">
+              <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 0C3.13 0 0 3.13 0 7C0 12.25 7 18 7 18C7 18 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z" fill="#C5A880"/>
+              </svg>
+              Beverly Hills, California
+            </div>
+            <div class="card-details">
+              <span><strong>4</strong> Beds</span>
+              <span><strong>5</strong> Baths</span>
+              <span><strong>6,100</strong> Sq Ft</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: The Pavilion House -->
+        <article class="property-card" 
+                 data-location="hamptons" 
+                 data-type="villa" 
+                 data-price="6.2" 
+                 data-beds="4" 
+                 id="cardPavilion">
+          <div class="card-img-wrapper">
+            <span class="card-badge">New Price</span>
+            <img src="images/estate_2.png" alt="The Pavilion House">
+          </div>
+          <div class="card-content">
+            <div class="card-price">$6,200,000</div>
+            <h3 class="card-title"><a href="property-detail.html">The Pavilion House</a></h3>
+            <div class="card-location">
+              <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 0C3.13 0 0 3.13 0 7C0 12.25 7 18 7 18C7 18 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z" fill="#C5A880"/>
+              </svg>
+              The Hamptons, New York
+            </div>
+            <div class="card-details">
+              <span><strong>4</strong> Beds</span>
+              <span><strong>4.5</strong> Baths</span>
+              <span><strong>5,500</strong> Sq Ft</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: #fff; display: inline-block; margin-bottom: 1.5rem;">HARLOW<span>&</span>CO.</a>
+          <p>Bespoke luxury real estate services for selective clientele. Timeless design, enduring quality, absolute discretion.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul class="footer-links">
+            <li><a href="listings.html">Aspen, CO</a></li>
+            <li><a href="listings.html">The Hamptons, NY</a></li>
+            <li><a href="listings.html">Beverly Hills, CA</a></li>
+            <li><a href="listings.html">Miami Beach, FL</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">The Advisory</a></li>
+            <li><a href="#">Press Room</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><span style="color: rgba(250,248,245,0.7);">HQ: Fifth Avenue, NY</span></li>
+            <li><a href="mailto:concierge@harlowco.com">concierge@harlowco.com</a></li>
+            <li><a href="tel:+18005550199">+1 (800) 555-0199</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Harlow & Co. Real Estate Advisory. All rights reserved.</div>
+        <div style="display: flex; gap: 2rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Filtering and Page Logic -->
+  <script>
+    // Grab query parameters if coming from home search
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const locParam = urlParams.get('location');
+      const typeParam = urlParams.get('type');
+      const priceParam = urlParams.get('price');
+      const bedsParam = urlParams.get('beds');
+
+      if (locParam) document.getElementById('filterLocation').value = locParam;
+      if (typeParam) document.getElementById('filterType').value = typeParam;
+      if (priceParam) document.getElementById('filterPrice').value = priceParam;
+      if (bedsParam) document.getElementById('filterBeds').value = bedsParam;
+
+      // Initial filter run
+      filterEstates();
+    });
+
+    const locationFilter = document.getElementById('filterLocation');
+    const typeFilter = document.getElementById('filterType');
+    const priceFilter = document.getElementById('filterPrice');
+    const bedsFilter = document.getElementById('filterBeds');
+    const resultsCount = document.getElementById('resultsText');
+    const cards = document.querySelectorAll('.property-card');
+
+    function filterEstates() {
+      const locVal = locationFilter.value;
+      const typeVal = typeFilter.value;
+      const priceVal = priceFilter.value;
+      const bedsVal = bedsFilter.value;
+
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cardLoc = card.getAttribute('data-location');
+        const cardType = card.getAttribute('data-type');
+        const cardPrice = parseFloat(card.getAttribute('data-price'));
+        const cardBeds = parseInt(card.getAttribute('data-beds'), 10);
+
+        let locMatch = (locVal === 'all' || locVal === cardLoc);
+        let typeMatch = (typeVal === 'all' || typeVal === cardType);
+        
+        let priceMatch = false;
+        if (priceVal === 'all') {
+          priceMatch = true;
+        } else if (priceVal === '5-10') {
+          priceMatch = (cardPrice >= 5.0 && cardPrice <= 10.0);
+        } else if (priceVal === '10-15') {
+          priceMatch = (cardPrice > 10.0 && cardPrice <= 15.0);
+        } else if (priceVal === '15+') {
+          priceMatch = (cardPrice > 15.0);
+        }
+
+        let bedsMatch = false;
+        if (bedsVal === 'all') {
+          bedsMatch = true;
+        } else {
+          bedsMatch = (cardBeds >= parseInt(bedsVal, 10));
+        }
+
+        if (locMatch && typeMatch && priceMatch && bedsMatch) {
+          card.classList.remove('hide');
+          visibleCount++;
+        } else {
+          card.classList.add('hide');
+        }
+      });
+
+      resultsCount.innerHTML = `Showing <strong>${visibleCount}</strong> estate${visibleCount === 1 ? '' : 's'}`;
+    }
+
+    // Attach listeners
+    locationFilter.addEventListener('change', filterEstates);
+    typeFilter.addEventListener('change', filterEstates);
+    priceFilter.addEventListener('change', filterEstates);
+    bedsFilter.addEventListener('change', filterEstates);
+  </script>
+</body>
+</html>

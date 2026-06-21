@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Obsidian Villa | Harlow & Co.</title>
+  <meta name="description" content="Detailed look at The Obsidian Villa, an architectural masterpiece nestled in Aspen, Colorado. 5 beds, 6.5 baths, 7,200 sq ft of pure luxury.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Premium Toast message styling for form submission */
+    .toast-success {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: rgba(27, 59, 43, 0.95);
+      border: 1px solid var(--color-gold);
+      color: var(--color-cream-bg);
+      padding: 1.2rem 2rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow-lg);
+      z-index: 999;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .toast-success.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .toast-checkmark {
+      color: var(--color-gold);
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="header-nav scrolled" id="mainNav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" id="navLogo">HARLOW<span>&</span>CO.</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="property-detail.html" style="color: var(--color-gold);">Featured Property</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">Inquire</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Property Detail Header -->
+  <section class="property-detail-header">
+    <div class="container">
+      <div style="margin-bottom: 2rem;">
+        <a href="listings.html" style="font-weight: 500; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold-dark); display: flex; align-items: center; gap: 0.5rem;" id="backToListingsLink">
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 12L7.4 10.6L3.8 7H16V5H3.8L7.4 1.4L6 0L0 6L6 12Z" fill="currentColor"/>
+          </svg>
+          Back to Listings
+        </a>
+      </div>
+      <div class="detail-header-container">
+        <div class="detail-meta-left">
+          <h1 id="propertyDetailTitle">The Obsidian Villa</h1>
+          <div class="address" id="propertyDetailAddress">
+            <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 0C3.13 0 0 3.13 0 7C0 12.25 7 18 7 18C7 18 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z" fill="#C5A880"/>
+            </svg>
+            742 Ridge Line Road, Aspen, Colorado
+          </div>
+        </div>
+        <div class="detail-meta-right">
+          <div class="detail-price-label">Private Treaty Price</div>
+          <div class="detail-price" id="propertyDetailPrice">$8,500,000</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Gallery Section -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-grid" id="detailGallery">
+        
+        <!-- Large Main Image -->
+        <div class="gallery-main" id="galleryMain">
+          <img src="images/hero_villa.png" alt="Obsidian Villa Exterior Patio" data-large="images/hero_villa.png">
+        </div>
+        
+        <!-- Side Grid Images -->
+        <div class="gallery-side">
+          <div class="gallery-side-img" id="gallerySide1">
+            <img src="images/living_room.png" alt="Obsidian Villa Interior Living Room" data-large="images/living_room.png">
+          </div>
+          <div class="gallery-side-img" id="gallerySide2">
+            <img src="images/bedroom.png" alt="Obsidian Villa Master Suite" data-large="images/bedroom.png">
+            <div class="gallery-more-overlay" id="galleryOverlay">
+              <span>View Gallery (4)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Content & Sticky Card Section -->
+  <section class="section" style="padding-top: 4rem;">
+    <div class="container">
+      <div class="detail-content-layout">
+        
+        <!-- Left Main Details Column -->
+        <div class="detail-main-info">
+          
+          <!-- Property Description -->
+          <div class="info-block" id="blockDescription">
+            <h3>The Story</h3>
+            <div class="description-text">
+              <p>
+                Carved into the rugged Alpine contours of Aspen, Colorado, The Obsidian Villa represents a pinnacle of luxury chalet architecture. Meticulously framed in blackened iron, local cedar, and massive slabs of natural volcanic stone, this breathtaking property strikes a spectacular silhouette against the snow-capped Rockies.
+              </p>
+              <p>
+                The residence is designed as an architectural dialog between grand entertaining spaces and private wellness sanctuaries. Vaulted double-height ceilings span the main salon, where a hand-crafted basalt stone hearth serves as a majestic focal point. Floor-to-ceiling sliding glass facade walls glide back effortlessly to merge the interior living spaces with a massive thermal patio.
+              </p>
+              <p>
+                No detail has been spared in the home’s layout. Every finish, from the European green oak cabinetry to the brushed champagne brass accents, has been carefully selected to complement the spectacular forest backdrop.
+              </p>
+            </div>
+          </div>
+
+          <!-- Specifications/Features -->
+          <div class="info-block" id="blockFeatures">
+            <h3>Specifications</h3>
+            <div class="features-list">
+              <div class="feature-item">
+                <span class="feature-label">Bedrooms</span>
+                <span class="feature-value">5</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-label">Bathrooms</span>
+                <span class="feature-value">6.5</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-label">Interior Area</span>
+                <span class="feature-value">7,200 Sq Ft</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-label">Land Size</span>
+                <span class="feature-value">1.8 Acres</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-label">Year Built</span>
+                <span class="feature-value">2024</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-label">Garage spaces</span>
+                <span class="feature-value">3 Car (Heated)</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-label">Wellness Suite</span>
+                <span class="feature-value">Sauna & Steam Bath</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-label">Wine Cellar</span>
+                <span class="feature-value">500+ Bottles</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floor Plan Placeholder -->
+          <div class="info-block" id="blockFloorPlan">
+            <h3>Floor Plans</h3>
+            <div style="background-color: var(--color-cream-alt); border: 1px dashed var(--color-border); border-radius: 8px; height: 350px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem;">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 1.2rem; opacity: 0.6;">
+                <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM17 11V7H13V11H17ZM11 11V7H7V11H11ZM17 17V13H13V17H17ZM11 17V13H7V17H11Z" fill="#1B3B2B"/>
+              </svg>
+              <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Interactive architectural layouts are available on request</h4>
+              <p style="color: var(--color-text-muted); font-size: 0.95rem; max-width: 450px;">
+                Detailed blue prints, CAD files, and engineering documents are held in confidence and can be released to qualified clients.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Contact Column -->
+        <div class="floating-card-wrapper" id="contact">
+          <div class="contact-card">
+            <h3 class="contact-card-title">Schedule a Showing</h3>
+            <p class="contact-card-subtitle">Request details, virtual walk-throughs, or a private preview of this estate.</p>
+            
+            <div class="agent-profile">
+              <div class="agent-photo">
+                <img src="images/agent_photo.png" alt="Olivia Harlow">
+              </div>
+              <div>
+                <div class="agent-name">Olivia Harlow</div>
+                <div class="agent-title">Founder & Managing Director</div>
+              </div>
+            </div>
+
+            <!-- Form -->
+            <form class="contact-form" id="detailContactForm">
+              <div class="form-group">
+                <label for="clientName">Your Name</label>
+                <input type="text" id="clientName" required placeholder="Alexander Vance">
+              </div>
+              <div class="form-group">
+                <label for="clientEmail">Email Address</label>
+                <input type="email" id="clientEmail" required placeholder="alexander@vanceholdings.com">
+              </div>
+              <div class="form-group">
+                <label for="clientPhone">Phone Number</label>
+                <input type="tel" id="clientPhone" placeholder="+1 (555) 012-3456">
+              </div>
+              <div class="form-group">
+                <label for="clientMessage">Message</label>
+                <textarea id="clientMessage" rows="4" required>I am interested in arranging a private viewing of The Obsidian Villa in Aspen. Please contact me with availability.</textarea>
+              </div>
+              <button type="submit" class="btn btn-primary submit-btn" id="submitFormBtn">Send Inquiry</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: #fff; display: inline-block; margin-bottom: 1.5rem;">HARLOW<span>&</span>CO.</a>
+          <p>Bespoke luxury real estate services for selective clientele. Timeless design, enduring quality, absolute discretion.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul class="footer-links">
+            <li><a href="listings.html">Aspen, CO</a></li>
+            <li><a href="listings.html">The Hamptons, NY</a></li>
+            <li><a href="listings.html">Beverly Hills, CA</a></li>
+            <li><a href="listings.html">Miami Beach, FL</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">The Advisory</a></li>
+            <li><a href="#">Press Room</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><span style="color: rgba(250,248,245,0.7);">HQ: Fifth Avenue, NY</span></li>
+            <li><a href="mailto:concierge@harlowco.com">concierge@harlowco.com</a></li>
+            <li><a href="tel:+18005550199">+1 (800) 555-0199</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Harlow & Co. Real Estate Advisory. All rights reserved.</div>
+        <div style="display: flex; gap: 2rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Overlay Modal -->
+  <div class="lightbox" id="galleryLightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose">&times;</button>
+      <img src="" id="lightboxImg" alt="Enlarged Gallery Photo">
+    </div>
+  </div>
+
+  <!-- Success Toast -->
+  <div class="toast-success" id="successToast">
+    <span class="toast-checkmark">&#10003;</span>
+    <div>
+      <h4 style="color: #fff; font-family: var(--font-sans); font-size: 0.95rem; margin-bottom: 0.1rem;">Inquiry Sent</h4>
+      <p style="color: rgba(250,248,245,0.8); font-size: 0.8rem;">An advisor will contact you within 24 hours.</p>
+    </div>
+  </div>
+
+  <!-- Script for Lightbox & Toast Actions -->
+  <script>
+    // Lightbox Functionality
+    const lightbox = document.getElementById('galleryLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('lightboxClose');
+    const galleryItems = [
+      document.getElementById('galleryMain'),
+      document.getElementById('gallerySide1'),
+      document.getElementById('gallerySide2')
+    ];
+
+    galleryItems.forEach(item => {
+      if (item) {
+        item.addEventListener('click', () => {
+          const imgEl = item.querySelector('img');
+          if (imgEl) {
+            const largeSrc = imgEl.getAttribute('data-large');
+            lightboxImg.src = largeSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Lock scrolling
+          }
+        });
+      }
+    });
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto'; // Release scrolling
+    };
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Handle Form Submission with Success Toast
+    const form = document.getElementById('detailContactForm');
+    const toast = document.getElementById('successToast');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Simulate form submission
+      toast.classList.add('active');
+      form.reset();
+
+      // Automatically hide after 4 seconds
+      setTimeout(() => {
+        toast.classList.remove('active');
+      }, 4000);
+    });
+  </script>
+</body>
+</html>
